@@ -1,1 +1,2167 @@
-&lt;h1&gt;hello&lt;/h1&gt;
+
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://blog.csdn.net/weixin_42304193/article/details/105034974"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="report" content='{"spm":"1001.2101","extra":{"tsab":"t_new"},"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+    <meta name="applicable-device" content="pc">
+    <link  href="https://g.csdnimg.cn/static/logo/favicon32.ico"  rel="shortcut icon" type="image/x-icon" />
+    <title>Git搭建个人博客_git博客_程序员 小明的博客-CSDN博客</title>
+    <script>
+      (function(){ 
+        var el = document.createElement("script"); 
+        el.src = "https://s3a.pstatp.com/toutiao/push.js?1abfa13dfe74d72d41d83c86d240de427e7cac50c51ead53b2e79d40c7952a23ed7716d05b4a0f683a653eab3e214672511de2457e74e99286eb2c33f4428830"; 
+        el.id = "ttzz"; 
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(el, s);
+      })(window)
+    </script>
+        <meta name="keywords" content="git博客">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"git博客"}'>
+    <meta name="description" content="Git搭建个人博客很多人都有写博客的习惯，所以我这篇博客就讲解一下如何在git上搭建一个个人的博客。环境搭建个人博客需要配置配置一下环境，这里我是使用win10来搭建的，因为像这种配置或者搭建东西，一般都是win系统比较麻烦，在mac和linux相对简单一点。一、git需要在系统里面安装git。具体的安装步骤可以参考安装git二、安装node.js使用node.js来搭建相对比较方...">
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/css/detail_enter-95840df9c6.min.css">
+    <script type="application/ld+json">{}</script>
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/themesSkin/skin3-template/skin3-template-762f7595fd.min.css">
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var isCorporate = false;//注释删除enterprise
+        var username =  "weixin_42304193";
+        var skinImg = "white";
+        var blog_address = "https://blog.csdn.net/weixin_42304193";
+        var currentUserName = "Qi_Chong";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/weixin_42304193/article/details/105034974";
+        var blogUrl = "https://blog.csdn.net/";
+        var avatar = "https://profile-avatar.csdnimg.cn/9f5fdc03d4424ff9ba3d297e4ef0e542_weixin_42304193.jpg!1";
+        var articleTitle = "Git搭建个人博客";
+        var articleDesc = "Git搭建个人博客很多人都有写博客的习惯，所以我这篇博客就讲解一下如何在git上搭建一个个人的博客。环境搭建个人博客需要配置配置一下环境，这里我是使用win10来搭建的，因为像这种配置或者搭建东西，一般都是win系统比较麻烦，在mac和linux相对简单一点。一、git需要在系统里面安装git。具体的安装步骤可以参考安装git二、安装node.js使用node.js来搭建相对比较方...";
+        var articleTitles = "Git搭建个人博客_git博客_程序员 小明的博客-CSDN博客";
+        var nickName = "程序员 小明";
+        var articleDetailUrl = "https://blog.csdn.net/weixin_42304193/article/details/105034974";
+        if(window.location.host.split('.').length == 3) {
+            blog_address = blogUrl + username;
+        }
+        var skinStatus = "White";
+        var blogStaticHost = "https://csdnimg.cn/release/blogv2/"
+        var mallTestStyle = "control"
+    </script>
+    <script src="https://g.csdnimg.cn/??fixed-sidebar/1.1.7/fixed-sidebar.js" type="text/javascript"></script>
+    <script src='//g.csdnimg.cn/common/csdn-report/report.js' type='text/javascript'></script>
+    <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+    <script src="https://dup.baidustatic.com/js/ds.js"></script>
+</head>
+  <body class="nodata " style="">
+        <script>
+            var toolbarSearchExt = '{"landingWord":["git博客"],"queryWord":"","tag":["nodejs","git"],"title":"Git搭建个人博客"}';
+        </script>
+    <script src="https://g.csdnimg.cn/common/csdn-toolbar/csdn-toolbar.js" type="text/javascript"></script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+    <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/pc/css/blog_code-01256533b5.min.css">
+    <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/chart-3456820cac.css" />
+    <link rel="stylesheet" href="https://g.csdnimg.cn/lib/swiper/6.0.4/css/swiper.css" />
+    <script src="https://g.csdnimg.cn/lib/swiper/6.0.4/js/swiper.js" async></script>
+    <script>
+      var articleId = 105034974;
+      var commentscount = 0;
+      var curentUrl = "https://blog.csdn.net/weixin_42304193/article/details/105034974";
+      var myUrl = "https://my.csdn.net/";
+        var highlight = ["搭建个人博客","nodejs","git","博客"];//高亮数组
+        var isRecommendModule = true;
+          var isBaiduPre = true;
+          var baiduCount = 2;
+          var setBaiduJsCount = 10;
+      var share_card_url = "https://app-blog.csdn.net/share?article_id=105034974&username=weixin_42304193"
+      var articleType = 1;
+      var baiduKey = "git博客";
+      var userNewReport = true;
+      var copyPopSwitch = true;
+      var needInsertBaidu = true;
+      var recommendRegularDomainArr = ["blog.csdn.net/.+/article/details/","download.csdn.net/download/","edu.csdn.net/course/detail/","ask.csdn.net/questions/","bbs.csdn.net/topics/","www.csdn.net/gather_.+/"]
+      var codeStyle = "";
+      var baiduSearchType = "baidulandingword";
+      var sharData = "{\"hot\":[{\"id\":1,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/a5f4260710904e538002a6ab337939b3.png\"},{\"id\":2,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/188b37199a2c4b74b1d9ffc39e0d52de.png\"},{\"id\":3,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/14ded358b631444581edd98a256bc5af.png\"},{\"id\":4,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/1470f23a770444d986ad551b9c33c5be.png\"},{\"id\":5,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/c329f5181dc74f6c9bd28c982bb9f91d.png\"},{\"id\":6,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/ccd8a3305e81460f9c505c95b432a65f.png\"},{\"id\":7,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/bc89d8283389440d97fc4d30e30f45e1.png\"},{\"id\":8,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/452d485b4a654f5592390550d2445edf.png\"},{\"id\":9,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/f8b9939db2ed474a8f43a643015fc8b7.png\"},{\"id\":10,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/6de8864187ab4ed3b1db0856369c36ff.png\"},{\"id\":11,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/673cc3470ff74072acba958dc0c46e2d.png\"},{\"id\":12,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/930c119760ac4491804db80f9c6d4e3f.png\"},{\"id\":13,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/15e6befb05a24233bc2b65e96aa8d972.png\"},{\"id\":14,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/2075fd6822184b95a41e214de4daec13.png\"},{\"id\":15,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/859b1552db244eb6891a809263a5c657.png\"},{\"id\":16,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/0be2f920f1f74290a98921974a9613fd.png\"},{\"id\":17,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/2e97e00b43f14afab494ea55ef3f4a6e.png\"},{\"id\":18,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/ff4ab252f46e444686f5135d6ebbfec0.png\"},{\"id\":19,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/ae029bbe99564e79911657912d36524f.png\"},{\"id\":20,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/b3ece39963de440388728e9e7b9bf427.png\"},{\"id\":21,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/6f14651a99ba486e926d63b6fa692997.png\"},{\"id\":22,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/83ceddf050084875a341e32dcceca721.png\"},{\"id\":23,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/b90368b8fd5d4c6c8c79a707d877cf7c.png\"},{\"id\":24,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/aeffae14ecf14e079b2616528c9a393b.png\"},{\"id\":25,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/c5a06b5a13d44d16bed868fc3384897a.png\"},{\"id\":26,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/08b697658b844b318cea3b119e9541ef.png\"},{\"id\":27,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/68ccb0b8d09346ac961d2b5c1a8c77bf.png\"},{\"id\":28,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/a2227a247e37418cbe0ea972ba6a859b.png\"},{\"id\":29,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/3a42825fede748f9993e5bb844ad350d.png\"},{\"id\":30,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/8882abc1dd484224b636966ea38555c3.png\"},{\"id\":31,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/4f6a5f636a3e444d83cf8cc06d87a159.png\"},{\"id\":32,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/1953ef79c56b4407b78d7181bdff11c3.png\"},{\"id\":33,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/c04a2a4f772948ed85b5b0380ed36287.png\"},{\"id\":34,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/5b4fecd05091405ea04d8c0f53e9f2c7.png\"},{\"id\":35,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/b89f576d700344e280d6ceb2a66c2420.png\"},{\"id\":36,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/1c65780e11804bbd9971ebadb3d78bcf.png\"},{\"id\":37,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/d590db2055f345db9706eb68a7ec151a.png\"},{\"id\":38,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/fe602f80700b4f6fb3c4a9e4c135510e.png\"},{\"id\":39,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/39ff2fcd31e04feba301a071976a0ba7.png\"},{\"id\":40,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/f9b61b3d113f436b828631837f89fb39.png\"},{\"id\":41,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/df1aca5f610c4ad48cd16da88c9c8499.png\"},{\"id\":42,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/d7acf73a1e6b41399a77a85040e10961.png\"},{\"id\":43,\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/b7f1b63542524b97962ff649ab4e7e23.png\"}],\"vip\":[{\"id\":1,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101150.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101154.png\"},{\"id\":2,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101204.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101208.png\"},{\"id\":3,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101211.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101215.png\"},{\"id\":4,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101218.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101220.png\"},{\"id\":5,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101223.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220920101226.png\"},{\"id\":6,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100635.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100639.png\"},{\"id\":7,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100642.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100644.png\"},{\"id\":8,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100647.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100649.png\"},{\"id\":9,\"vipUrl\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100652.png\",\"url\":\"https:\\/\\/img-home.csdnimg.cn\\/images\\/20220922100655.png\"},{\"id\":10,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/55de67481fde4b04b97ad78f11fe369a.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/bb2418fb537e4d78b10d8765ccd810c5.png\"},{\"id\":11,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/579c713394584d128104ef1044023954.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/f420d9fbcf5548079d31b5e809b6d6cd.png\"},{\"id\":12,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/75b7f3155ba642f5a4cc16b7baf44122.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/a9030f5877be401f8b340b80b0d91e64.png\"},{\"id\":13,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/0903d33cafa54934be3780aa54ae958d.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/2cd8c8929f5a42fca5da2a0aeb456203.png\"},{\"id\":14,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/949fd7c22884439fbfc3c0e9c3b8dee7.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/dafbea9bd9eb4f3b962b48dc41657f89.png\"},{\"id\":15,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/4119cfddd71d4e6a8a27a18dbb74d90e.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/c56310c8b6384d9e85388e4e342ce508.png\"},{\"id\":16,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/121575274da142bcbbbbc2e8243dd411.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/5013993de06542f881018bb9abe2edf7.png\"},{\"id\":17,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/4d97aa6dd4fe4f09a6bef5bdf8a6abcd.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/76f23877b6ad4066ad45ce8e31b4b977.png\"},{\"id\":18,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/fdb619daf21b4c829de63b9ebc78859d.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/a1abe5d27a5441f599adfe662f510243.png\"},{\"id\":19,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/676b7707bb11410f8f56bc0ed2b2345c.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/7ac5b467fbf24e1d8c2de3f3332c4f54.png\"},{\"id\":20,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/0becb8cc227e4723b765bdd69a20fd4a.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/fdec85b26091486b9a89d0b8d45c3749.png\"},{\"id\":21,\"vipUrl\":\"https:\\/\\/img-blog.csdnimg.cn\\/1a6c06235ad44941b38c54cbc25a370c.png\",\"url\":\"https:\\/\\/img-blog.csdnimg.cn\\/410a06cda2d44b0c84578f88275caf70.png\"}],\"map\":{\"hot\":\"热门\",\"vip\":\"VIP\"}}";
+      
+      var canRead = true;
+      var blogMoveHomeArticle = false;
+      var showPcWindowAd = false;
+      var showHeadWord = true;
+      var showSearchText = "";
+      var linkPage = true;
+      var articleSource = 1;
+      var articleReport = '{"spm":"1001.2101","extra":{"tsab":"t_new"},"pid":"blog"}';
+      var isShowToQuestion = false;
+        var baiduSearchChannel = 'pc_relevant'
+        var baiduSearchIdentification = '.235^v38^pc_relevant_anti_vip'
+        var distRequestId = '1686748497088_72649'
+        var initRewardObject = {
+          giver: "Qi_Chong",
+          anchor: "weixin_42304193",
+          articleId: "105034974",
+          sign: "95170e0e83ff2aca7a2e8fdda40dc8a9",
+        }
+        var isLikeStatus = false;
+        var isUnLikeStatus = false;
+        var studyLearnWord = "";
+        var isCurrentUserVip = false;
+        var contentViewsHeight = 0;
+        var contentViewsCount = 0;
+        var contentViewsCountLimit = 5;
+        var isShowConcision = true
+      var isCookieConcision = false
+      var isHasDirectoryModel = false
+      var isShowSideModel = false
+      var isShowDirectoryModel = true
+      function getCookieConcision(sName){
+        var allCookie = document.cookie.split("; ");
+        for (var i=0; i < allCookie.length; i++){
+          var aCrumb = allCookie[i].split("=");
+          if (sName == aCrumb[0])
+            return aCrumb[1];
+        }
+        return null;
+      }
+      if (getCookieConcision('blog_details_concision') && getCookieConcision('blog_details_concision') == 0){
+        isCookieConcision = true
+        isShowSideModel = true
+        isShowDirectoryModel = false
+      }
+    </script>
+        <div class="main_father clearfix d-flex justify-content-center mainfather-concision" style="height:100%;">
+          <div class="container clearfix container-concision" id="mainBox">
+          <script>
+          if (!isCookieConcision) {
+            $('.main_father').removeClass('mainfather-concision')
+            $('.main_father .container').removeClass('container-concision')
+          }
+          </script>
+          <main>
+<script type="text/javascript">
+    var resourceId =  "";
+    function getQueryString(name) {   
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象  
+      var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+      if( r != null ) return decodeURIComponent( r[2] ); return '';   
+    }
+    function stripscript(s){ 
+      var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？%]") 
+      var rs = ""; 
+      for (var i = 0; i < s.length; i++) { 
+        rs = rs+s.substr(i, 1).replace(pattern, ''); 
+      } 
+      return rs;
+    }
+    var blogHotWords = stripscript(getQueryString('utm_term')).length > 1 ? stripscript(getQueryString('utm_term')) : ''
+</script>
+<div class="blog-content-box">
+    <div class="article-header-box">
+        <div class="article-header">
+            <div class="article-title-box">
+                <h1 class="title-article" id="articleContentId">Git搭建个人博客</h1>
+            </div>
+            <div class="article-info-box">
+                    <div class="up-time">最新推荐文章于&nbsp;2021-09-28 21:13:31&nbsp;发布</div>
+                <div class="article-bar-top">
+                    <img class="article-type-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png" alt="">
+                    <div class="bar-content">
+                      <a class="follow-nickName " href="https://blog.csdn.net/weixin_42304193" target="_blank" rel="noopener" title="程序员 小明">程序员 小明</a>
+                    <img class="article-time-img article-heard-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newCurrentTime2.png" alt="">
+                          <span class="time blog-postTime" data-time="2020-03-22 21:26:54">最新推荐文章于&nbsp;2021-09-28 21:13:31&nbsp;发布</span>
+                    <img class="article-read-img article-heard-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes2.png" alt="">
+                    <span class="read-count">500</span>
+                    <a id="blog_detail_zk_collection" class="un-collection" data-report-click='{"mod":"popu_823","spm":"1001.2101.3001.4232","ab":"new"}'>
+                        <img class="article-collect-img article-heard-img un-collect-status isdefault" style="display:inline-block" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect2.png" alt="">
+                        <img class="article-collect-img article-heard-img collect-status isactive" style="display:none" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive2.png" alt="">
+                        <span class="name">收藏</span>
+                        <span class="get-collection">
+                            2
+                        </span>
+                    </a>
+                    </div>
+                </div>
+                <div class="blog-tags-box">
+                    <div class="tags-box artic-tag-box">
+                            <span class="label">分类专栏：</span>
+                                <a class="tag-link" href="https://blog.csdn.net/weixin_42304193/category_9746237.html" target="_blank" rel="noopener">node.js</a>
+                            <span class="label">文章标签：</span>
+                                <a data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"nodejs","ab":"new","extra":"{\"searchword\":\"nodejs\"}"}' class="tag-link" href="https://so.csdn.net/so/search/s.do?q=nodejs&amp;t=all&amp;o=vip&amp;s=&amp;l=&amp;f=&amp;viparticle=" target="_blank" rel="noopener">nodejs</a>
+                                <a data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"git","ab":"new","extra":"{\"searchword\":\"git\"}"}' class="tag-link" href="https://so.csdn.net/so/search/s.do?q=git&amp;t=all&amp;o=vip&amp;s=&amp;l=&amp;f=&amp;viparticle=" target="_blank" rel="noopener">git</a>
+                    </div>
+                </div>
+                <div class="slide-content-box">
+                    <div class="article-copyright">
+                        <div class="creativecommons">
+                            版权声明：本文为博主原创文章，遵循<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener"> CC 4.0 BY-SA </a>版权协议，转载请附上原文出处链接和本声明。
+                        </div>
+                        <div class="article-source-link">
+                            本文链接：<a href="https://blog.csdn.net/weixin_42304193/article/details/105034974" target="_blank">https://blog.csdn.net/weixin_42304193/article/details/105034974</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="operating">
+                    <a class="href-article-edit slide-toggle">版权</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="blogHuaweiyunAdvert"></div>
+        <div id="blogColumnPayAdvert">
+            <div class="column-group">
+                <div class="column-group-item column-group0 column-group-item-one">
+                    <div class="item-l">
+                        <a class="item-target" href="https://blog.csdn.net/weixin_42304193/category_9746237.html" target="_blank" title="node.js"
+                        data-report-view='{"spm":"1001.2101.3001.6332"}'
+                        data-report-click='{"spm":"1001.2101.3001.6332"}'>
+                            <img class="item-target" src="https://img-blog.csdnimg.cn/20201014180756754.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="">
+                            <span class="title item-target">
+                                <span>
+                                <span class="tit">node.js</span>
+                                    <span class="dec">专栏收录该内容</span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="item-m">
+                        <span>14 篇文章</span>
+                        <span>2 订阅</span>
+                    </div>
+                    <div class="item-r">
+                            <a class="item-target article-column-bt articleColumnFreeBt" data-id="9746237">订阅专栏</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <article class="baidu_pl">
+        <div id="article_content" class="article_content clearfix">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/kdoc_html_views-1a98987dfd.css">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-25cebea3f9.css">
+                <div id="content_views" class="markdown_views prism-atom-one-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                    <h1><a id="Git_0"></a>Git搭建个人博客</h1> 
+<p>很多人都有写博客的习惯&#xff0c;所以我这篇博客就讲解一下如何在git上搭建一个个人的博客。</p> 
+<h2><a id="_3"></a>环境</h2> 
+<p>搭建个人博客需要配置配置一下环境&#xff0c;这里我是使用win10来搭建的&#xff0c;因为像这种配置或者搭建东西&#xff0c;一般都是win系统比较麻烦&#xff0c;在mac和linux相对简单一点。</p> 
+<p>一、git<br /> 需要在系统里面安装git。<br /> 具体的安装步骤可以参考<a href="https://blog.csdn.net/qq_32786873/article/details/80570783">安装git</a></p> 
+<p>二、安装node.js</p> 
+<p>使用node.js来搭建相对比较方便&#xff0c;因为node.js中的npm安装模块和框架比较方便&#xff0c;<br /> 具体的安装步骤可以自己百度。</p> 
+<p>三、安装hexo框架</p> 
+<p>hexo框架可以说是比较流行的博客框架&#xff0c;安装直接<br /> npm install hexo-cli -g<br /> npm install hexo -g</p> 
+<h2><a id="_22"></a>第一步&#xff1a;创建仓库。</h2> 
+<p>第一步首先要在git中创建仓库<br /> <img src="https://img-blog.csdnimg.cn/20200322205214375.png?x-oss-process&#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDE5Mw&#61;&#61;,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p> 
+<p><img src="https://img-blog.csdnimg.cn/20200322205321239.png?x-oss-process&#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDE5Mw&#61;&#61;,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p> 
+<h5><a id="Repository_name__usernamegithubio_28"></a>这里注意&#xff1a;Repository name 一般都是 username.github.io</h5> 
+<p>然后就是点击create repository就可以创建仓库了。</p> 
+<h2><a id="hexo_32"></a>第二步&#xff1a;配置hexo</h2> 
+<p>首先要初始化一个博客&#xff0c;你要先创建创建一个hexo的文件夹&#xff0c;一般都是在github文件夹的目录下面打开终端&#xff0c;初始化hexo</p> 
+<p>hexo init</p> 
+<p>在hexo框架里面是可以自己选择主题&#xff0c;具体有什么主题可以去hexo官网去查看<a href="https://hexo.io/zh-cn/">hexo官网</a></p> 
+<p>安装主题<br /> git clone https://github.com/iissnan/hexo-theme-next themes/next</p> 
+<p>然后再对hexo进行基础的配置&#xff0c;在刚才新建的hexo文件夹下面一个文件_config.yml</p> 
+<pre><code>#博客名称
+title: 我的博客
+#副标题
+subtitle: 一天进步一点
+#简介
+description: 记录生活点滴
+#博客作者&#xff08;请修改&#xff09;
+author: John Doe
+#博客语言
+language: zh-Fans
+#时区
+timezone:
+#博客地址,与申请的GitHub一致&#xff08;请修改&#xff09;
+url: http://elfwalk.github.io
+root: /
+#博客链接格式
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+default_category: uncategorized
+category_map:
+tag_map:
+#日期格式
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+#分页&#xff0c;每页文章数量
+per_page: 5
+pagination_dir: page
+#博客主题
+theme: landscape
+#发布设置
+deploy: 
+  type: git
+  #elfwalk改为你的github用户名&#xff08;请修改&#xff09;
+  repository: https://github.com/elfwalk/elfwalk.github.io.git
+  branch: master
+</code></pre> 
+<h3><a id="git_105"></a>在对git进行配置</h3> 
+<p>在win10是一定需要这一步的&#xff0c;否则就会报错</p> 
+<p>git config --global user.name “你的用户名”<br /> git config --global user.email “你注册git的邮箱”</p> 
+<h2><a id="hexo_112"></a>测试hexo</h2> 
+<p>在终端里面输入</p> 
+<p>hexo g<br /> hexo s</p> 
+<p>然后打开网址 http://localhost:4000</p> 
+<p><img src="https://img-blog.csdnimg.cn/20200322211809527.png?x-oss-process&#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDE5Mw&#61;&#61;,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p> 
+<p>然后就是可以看到了自己的个人博客了&#xff0c;但是这样还没完</p> 
+<h2><a id="git_124"></a>部署到git</h2> 
+<p>安装自动化部署工具<br /> npm instal lhexo-deployer-git --save</p> 
+<p>然后在hexo文件夹下面的Git Bash中部署<br /> hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p> 
+<p>然后在浏览器上输入https://wwwxiaoming.github.io/</p> 
+<p>wwwxiaoming是你git的名字。</p> 
+<p>这样就可以看到自己发布的博客了。</p> 
+<p><img src="https://img-blog.csdnimg.cn/20200322212545135.png?x-oss-process&#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjMwNDE5Mw&#61;&#61;,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p> 
+<h4><a id="QQ1693490575_141"></a>如果对上面有什么问题的或者是想要一起讨论技术问题的可以添加我的QQ1693490575</h4>
+                </div>
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-98b95bb57c.css" rel="stylesheet">
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-c216769e99.css" rel="stylesheet">
+        </div>
+        <div id="treeSkill"></div>
+    </article>
+<script>
+  $(function() {
+    setTimeout(function () {
+      var mathcodeList = document.querySelectorAll('.htmledit_views img.mathcode');
+      if (mathcodeList.length > 0) {
+        for (let i = 0; i < mathcodeList.length; i++) {
+          if (mathcodeList[i].naturalWidth === 0 || mathcodeList[i].naturalHeight === 0) {
+            var alt = mathcodeList[i].alt;
+            alt = '\\(' + alt + '\\)';
+            var curSpan = $('<span class="img-codecogs"></span>');
+            curSpan.text(alt);
+            $(mathcodeList[i]).before(curSpan);
+            $(mathcodeList[i]).remove();
+          }
+        }
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      }
+    }, 1000)
+  });
+</script>
+</div>
+    <div class="more-toolbox-new" id="toolBarBox">
+      <div class="left-toolbox">
+        <div class="toolbox-left">
+            <div class="profile-box">
+              <a class="profile-href" target="_blank" href="https://blog.csdn.net/weixin_42304193"><img class="profile-img" src="https://profile-avatar.csdnimg.cn/9f5fdc03d4424ff9ba3d297e4ef0e542_weixin_42304193.jpg!1">
+                <span class="profile-name">
+                  程序员 小明
+                </span>
+              </a>
+            </div>
+            <div class="profile-attend">
+                <div class="profile-subscribe-box">
+                  <div class="profile-subscribe-cont">
+                    <img class="subscribe-img-close" src="https://img-home.csdnimg.cn/images/20221212101536.png" alt="">
+                    <div class="profile-subscribe-box-head">
+                      <span>微信</span>扫码订阅
+                    </div>
+                    <img class="subscribe-img" src="https://img-home.csdnimg.cn/images/20230210031213.png" alt="">
+                    <div class="profile-subscribe-box-text">
+                      UP更新不错过~
+                    </div>
+                  </div>
+                </div>
+                <a class="tool-attend tool-bt-button tool-bt-attend" href="javascript:;" data-report-view='{"mod":"1592215036_002","spm":"1001.2101.3001.4232","extend1":"关注"}'>关注</a>
+              <a class="tool-item-follow active-animation" style="display:none;">关注</a>
+            </div>
+        </div>
+        <div class="toolbox-middle">
+          <ul class="toolbox-list">
+            <li class="tool-item tool-item-size tool-active is-like" id="is-like">
+              <a class="tool-item-href">
+                <img style="display:none;" id="is-like-imgactive-animation-like" class="animation-dom active-animation" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarThumbUpactive.png" alt="">
+                <img class="isactive" style="display:none" id="is-like-imgactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newHeart2021Active.png" alt="">
+                <img class="isdefault" style="display:block" id="is-like-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newHeart2021Black.png" alt="">
+                <span id="spanCount" class="count ">
+                    1
+                </span>
+              </a>
+              <div class="tool-hover-tip"><span class="text space">点赞</span></div>
+            </li>
+            <li class="tool-item tool-item-size tool-active is-unlike" id="is-unlike">
+              <a class="tool-item-href">
+                <img class="isactive" style="margin-right:0px;display:none" id="is-unlike-imgactive" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newUnHeart2021Active.png" alt="">
+                <img class="isdefault" style="margin-right:0px;display:block" id="is-unlike-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newUnHeart2021Black.png" alt="">
+                <span id="unlikeCount" class="count "></span>
+              </a>
+              <div class="tool-hover-tip"><span class="text space">踩</span></div>
+            </li>
+            <li class="tool-item tool-item-size tool-active is-collection ">
+              <a class="tool-item-href" href="javascript:;" data-report-click='{"mod":"popu_824","spm":"1001.2101.3001.4130","ab":"new"}'>
+                <img style="display:none" id="is-collection-img-collection" class="animation-dom active-animation" src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollectionActive.png" alt="">
+                <img class="isdefault" id="is-collection-img" style="display:block" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newCollectBlack.png" alt="">
+                <img class="isactive" id="is-collection-imgactive" style="display:none" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newCollectActive.png" alt="">
+                <span class="count get-collection " id="get-collection">
+                    2
+                </span>
+              </a>
+              <div class="tool-hover-tip collect">
+                <div class="collect-operate-box">
+                  <span class="collect-text" id="is-collection">
+                    收藏
+                  </span>
+                </div>
+              </div>
+              <div class="tool-active-list">
+                <div class="text">
+                  觉得还不错?
+                  <span class="collect-text" id="tool-active-list-collection">
+                    一键收藏
+                  </span>
+                 <img id="tool-active-list-close" src="https://csdnimg.cn/release/blogv2/dist/pc/img/collectionCloseWhite.png" alt="">
+                </div>
+              </div>
+            </li>
+                <li class="tool-item tool-item-size tool-active tool-item-reward">
+                  <a class="tool-item-href" href="javascript:;" data-report-click='{"mod":"popu_830","spm":"1001.2101.3001.4237","dest":"","ab":"new"}'>
+                    <img class="isdefault reward-bt" id="rewardBtNew" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newRewardBlack.png" alt="打赏">
+                    <span class="count"></span>
+                  </a>
+                  <div class="tool-hover-tip"><span class="text space">打赏</span></div>
+                </li>
+          <li class="tool-item tool-item-size tool-active tool-item-comment">
+            <div class="guide-rr-first">
+              <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/guideRedReward01.png" alt="">
+              <button class="btn-guide-known">知道了</button>
+            </div>
+              <a class="tool-item-href go-side-comment" data-report-click='{"spm":"1001.2101.3001.7009"}'>
+              <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newComment2021Black.png" alt="">
+              <span class="count">
+                    0
+              </span>
+            </a>
+            <div class="tool-hover-tip"><span class="text space">评论</span></div>
+          </li>
+          <li class="tool-item tool-item-bar">
+          </li>
+          <li class="tool-item tool-item-size tool-active tool-QRcode" data-type="article" id="tool-share">
+            <a class="tool-item-href" href="javascript:;" data-report-click='{"mod":"1582594662_002","spm":"1001.2101.3001.4129","ab":"new"}'>
+              <img class="isdefault" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newShareBlack.png" alt="">
+            </a>
+              <div class="QRcode" id="tool-QRcode">
+            <div class="share-bg-icon icon1" id="shareBgIcon"></div>
+              <div class="share-bg-box">
+                <div class="share-content">
+                    <img class="share-avatar" src="https://profile-avatar.csdnimg.cn/9f5fdc03d4424ff9ba3d297e4ef0e542_weixin_42304193.jpg!1" alt="">
+                  <div class="share-tit">
+                    Git搭建个人博客
+                  </div>
+                  <div class="share-dec">
+                    Git搭建个人博客很多人都有写博客的习惯，所以我这篇博客就讲解一下如何在git上搭建一个个人的博客。环境搭建个人博客需要配置配置一下环境，这里我是使用win10来搭建的，因为像这种配置或者搭建东西，一般都是win系统比较麻烦，在mac和linux相对简单一点。一、git需要在系统里面安装git。具体的安装步骤可以参考安装git二、安装node.js使用node.js来搭建相对比较方...
+                  </div>
+                  <a id="copyPosterUrl" class="url" data-report-click='{"spm":"1001.2101.3001.7493"}' data-report-view='{"spm":"1001.2101.3001.7493"}'>复制链接</a>
+                </div>
+                <div class="share-code">
+                  <div class="share-code-box" id='shareCode'></div>
+                  <div class="share-code-text">扫一扫</div>
+                </div>
+              </div>
+                <div class="share-code-type">
+                </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="toolbox-right">
+            <div class="tool-directory">
+                <a class="bt-columnlist-show"
+                  data-id="9746237"
+                  data-free="true"
+                  data-subscribe="false"
+                  data-title="node.js"
+                  data-img="https://img-blog.csdnimg.cn/20201014180756754.png?x-oss-process=image/resize,m_fixed,h_64,w_64"
+                  data-url="https://blog.csdn.net/weixin_42304193/category_9746237.html"
+                  data-sum="14"
+                  data-people="2"
+                  data-price="0"
+                  data-oldprice="0"
+                  data-join="false"
+                  data-studyvip="false"
+                  data-studysubscribe="false"
+                  data-report-view='{"spm":"1001.2101.3001.6334","extend1":"专栏目录"}'
+                  data-report-click='{"spm":"1001.2101.3001.6334","extend1":"专栏目录"}'>专栏目录</a>
+          </div>
+</div>
+</div>
+</div>
+<script type=text/javascript crossorigin src="https://csdnimg.cn/release/phoenix/production/qrcode-7c90a92189.min.js"></script>
+<script src="//g.csdnimg.cn/??sharewx/1.2.1/sharewx.js" type="text/javascript"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/common/csdn-login-box/csdn-login-box.js"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/collection-box/2.1.1/collection-box.js"></script>                <div class="first-recommend-box recommend-box ">
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_38694566/14042767"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6661.1","mod":"popu_871","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant_t0.none-task-download-2~default~CTRLIST~Paid-1-14042767-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"1","strategy":"2~default~CTRLIST~Paid","dest":"https://download.csdn.net/download/weixin_38694566/14042767"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_38694566/14042767" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6661.1","mod":"popu_871","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant_t0.none-task-download-2~default~CTRLIST~Paid-1-14042767-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"1","strategy":"2~default~CTRLIST~Paid","dest":"https://download.csdn.net/download/weixin_38694566/14042767"}'  data-report-query='spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-download-2%7Edefault%7ECTRLIST%7EPaid-1-14042767-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant_t0.none-task-download-2%7Edefault%7ECTRLIST%7EPaid-1-14042767-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">利用<em>git</em>pages+hexo搭建自己的<em>博客</em></div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">01-08</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_38694566/14042767" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6661.1","mod":"popu_871","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant_t0.none-task-download-2~default~CTRLIST~Paid-1-14042767-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"1","strategy":"2~default~CTRLIST~Paid","dest":"https://download.csdn.net/download/weixin_38694566/14042767"}'  data-report-query='spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-download-2%7Edefault%7ECTRLIST%7EPaid-1-14042767-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant_t0.none-task-download-2%7Edefault%7ECTRLIST%7EPaid-1-14042767-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">从开始开始着手搭建到完成大概花了一个下午的时间，采坑不少，在此记录一下
+我的<em>博客</em>地址http://delaprada.com
+第一步 准备工作
+node.js下载好，<em>git</em>hub有已注册的账号
+在<em>git</em>hub中新建一个repository，命名为：你的<em>git</em>hub名称.<em>git</em>hub.io（下面是我的仓库名称）：
+（有些<em>博客</em>直接让我们fork它们的项目，个人感觉这么做不太好，很多东西自己动手做一遍更好）
+第二步 安装Hexo
+Hexo就是一个<em>博客</em>框架，官网上也有安装教程Hexo官网
+step1：windows系统鼠标右键<em>git</em> bash，输入两个安装指令：
+npm install hexo-cl</div>
+			</a>
+		</div>
+	</div>
+</div>
+                </div>
+              <script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_commontools-ad67eb7a7a.min.js" type="text/javascript" async></script>
+                <div class="second-recommend-box recommend-box ">
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/niobi/article/details/129742579"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.1","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-129742579-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"1","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/niobi/article/details/129742579"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/niobi/article/details/129742579" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.1","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-129742579-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"1","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/niobi/article/details/129742579"}'  data-report-query='spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-129742579-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-129742579-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1"><em>git</em>hub搭建<em>博客</em></div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/niobi" target="_blank"><span class="blog-title">niobi的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">03-24</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					74
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/niobi/article/details/129742579" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.1","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-129742579-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"1","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/niobi/article/details/129742579"}'  data-report-query='spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-129742579-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-129742579-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>git</em>hub搭建基于hexo,node.js的<em>博客</em> 包含详细步骤及其问题</div>
+			</a>
+		</div>
+	</div>
+</div>
+                </div>
+<a id="commentBox" name="commentBox"></a>
+<div id="pcCommentBox" class="comment-box comment-box-new2 login-comment-box-new" style="display:none">
+    <div class="has-comment" style="display:block">
+      <div class="one-line-box">
+        <div class="has-comment-tit go-side-comment">
+          <span class="count">0</span>&nbsp;条评论
+        </div>
+        <div class="has-comment-con comment-operate-item"></div>
+        <a class="has-comment-bt-right go-side-comment focus">写评论</a>
+      </div>
+    </div>
+</div>              <div class="recommend-box insert-baidu-box recommend-box-style ">
+                <div class="recommend-item-box no-index" style="display:none"></div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_42114041/16485961"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.2","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-2-16485961-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"2","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_42114041/16485961"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_42114041/16485961" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.2","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-2-16485961-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"2","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_42114041/16485961"}'  data-report-query='spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-2-16485961-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-2-16485961-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">zy699.<em>git</em>.io:个人<em>博客</em></div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">04-06</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_42114041/16485961" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.2","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-2-16485961-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"2","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_42114041/16485961"}'  data-report-query='spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-2-16485961-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-2-16485961-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">zy699.<em>git</em>.io
+个人<em>博客</em></div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_38501045/18881301"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.3","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-3-18881301-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"3","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_38501045/18881301"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_38501045/18881301" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.3","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-3-18881301-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"3","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_38501045/18881301"}'  data-report-query='spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-3-18881301-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-3-18881301-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">var源码matlab-<em>git</em>blog:基于<em>git</em>issue的轻量级个人<em>博客</em>模板</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">05-19</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_38501045/18881301" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.3","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-3-18881301-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"3","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_38501045/18881301"}'  data-report-query='spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-3-18881301-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-3-18881301-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">var
+源码
+matlab
+<em>git</em>blog
+这是一个极轻量级的，基于<em>git</em>
+issue的个人<em>博客</em>模板，非常适合于想在<em>Git</em>Hub
+pages上<em>搭建个人博客</em>的人。
+现有功能
+发表文章
+文章评论
+文章、评论分页
+文章设置标签
+文章搜索功能
+文章、评论点赞功能（不能取消点赞
+:winking_face_with_tongue:
+<em>博客</em>API接口，可输出json格式信息，方便用户进行开发客户端等操作。具体接口使用见说明底部。
+可根据文章作者和文章状态(close或open)筛选文章，暂不支持多人筛选
+<em>博客</em>本身没有发表文章的接口，而是在<em>Git</em>Hub的issue页面直接new
+issue。
+评论功能参考了，借用了<em>Git</em>ment的css样式，重写了JavaScript逻辑。评论功能基于<em>Git</em>Hub的issue，支持Markdown语法，支持@功能，支持点赞功能。
+可以在<em>Git</em>Hub上为每个文章指定标签label。
+404页面模仿了<em>Git</em>Hub自己的404页面，可点击查看404页面示例。
+如何开始
+复制该仓库
+最快捷的方法就是直接Fork这个repo，修改仓库名为username.<em>git</em>hub.io格式，然后稍微配置一下就能直接使用了。
+第二种办法就是</div>
+			</a>
+		</div>
+	</div>
+</div>
+		<dl id="recommend-item-box-tow" class="recommend-item-box type_blog clearfix">
+			
+		</dl>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/qq_34446485/10227216"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.4","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-4-10227216-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"4","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/qq_34446485/10227216"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/qq_34446485/10227216" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.4","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-4-10227216-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"4","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/qq_34446485/10227216"}'  data-report-query='spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-4-10227216-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-4-10227216-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">SSM个人<em>博客</em>含数据库与说明 说明在<em>git</em>hub</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">01-27</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/qq_34446485/10227216" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.4","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-4-10227216-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"4","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/qq_34446485/10227216"}'  data-report-query='spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-4-10227216-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-4-10227216-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">原地址：https://<em>git</em>hub.com/jxnu-liguobin/blog 有说明
+仅供新手参考springboot 主要是是ssm的知识，没有使用jpa security等</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://chenchenchen.blog.csdn.net/article/details/113625123"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.5","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-5-113625123-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"5","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://chenchenchen.blog.csdn.net/article/details/113625123"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://chenchenchen.blog.csdn.net/article/details/113625123" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.5","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-5-113625123-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"5","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://chenchenchen.blog.csdn.net/article/details/113625123"}'  data-report-query='spm=1001.2101.3001.6650.5&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-113625123-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-113625123-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">使用<em>Git</em><em>搭建个人博客</em></div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_38004638" target="_blank"><span class="blog-title">Hello World</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">02-04</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					1534
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://chenchenchen.blog.csdn.net/article/details/113625123" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.5","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-5-113625123-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"5","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://chenchenchen.blog.csdn.net/article/details/113625123"}'  data-report-query='spm=1001.2101.3001.6650.5&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-113625123-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-113625123-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">为什么要<em>搭建个人博客</em>
+
+好记性不如烂笔头，方便日后整理回顾
+	免费方便，不需要服务器不需要后台，不需要依赖除了<em>git</em>的外部服务
+	可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于<em>git</em>hub的
+	数据绝对安全，基于<em>git</em>hub的版本管理，想恢复到哪个历史版本都行
+	<em>博客</em>内容可以轻松打包、转移、发布到其它平台
+	全是静态文件，访问速度快
+	为什么写<em>博客</em>：http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/
+
+
+准备..</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/acmliying/article/details/91354967"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.6","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-6-91354967-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"6","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/acmliying/article/details/91354967"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/acmliying/article/details/91354967" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.6","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-6-91354967-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"6","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/acmliying/article/details/91354967"}'  data-report-query='spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-91354967-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-91354967-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">用<em>git</em><em>搭建个人博客</em></div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/acmliying" target="_blank"><span class="blog-title">zoey的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">06-09</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					2962
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/acmliying/article/details/91354967" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.6","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-6-91354967-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"6","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/acmliying/article/details/91354967"}'  data-report-query='spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-91354967-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-91354967-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">1.安装 Node.js
+
+2.安装 <em>Git</em>
+
+3.全局安装Hexo 在命令框中输入  npm install -g hexo-cli
+
+4. hexo init &lt;folder&gt;
+
+ cd &lt;folder&gt;
+
+  npm install
+
+这里是在E:/myBlog
+
+
+
+5. hexo server 可以启动服务器，默认是 http://localh...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/weixin_33966095/article/details/93390930"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.7","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-7-93390930-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"7","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/weixin_33966095/article/details/93390930"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/weixin_33966095/article/details/93390930" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.7","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-7-93390930-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"7","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/weixin_33966095/article/details/93390930"}'  data-report-query='spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-93390930-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-93390930-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">创建<em>Git</em>Hub技术<em>博客</em>全攻略</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/weixin_33966095" target="_blank"><span class="blog-title">weixin_33966095的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">07-12</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					1073
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/weixin_33966095/article/details/93390930" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.7","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-7-93390930-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"7","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/weixin_33966095/article/details/93390930"}'  data-report-query='spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-93390930-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-93390930-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">说明: 首先,你需要注册一个 <em>git</em>hub 账号,最好取一个有意义的名字,比如姓名全拼,昵称全拼,如果被占用,可以加上有意义的数字.本文中假设用户名为 tiemaocsdn1. 注册账号:地址: https://<em>git</em>hub.com/输入账号、邮箱、密码,然后点击注册按钮.图1 第1步2. 初始设置注册完成后,选择Free免费账号完成设置。图2 第2步2.1 验证邮箱请打开你的邮箱，查看发送给...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/u012168038/article/details/77715439"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.8","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-8-77715439-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"8","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/u012168038/article/details/77715439"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/u012168038/article/details/77715439" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.8","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-8-77715439-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"8","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/u012168038/article/details/77715439"}'  data-report-query='spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-77715439-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-77715439-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">手把手教你在<em>Git</em>hub上建立自己的个人<em>博客</em>网站</div>
+					<div class="tag">热门推荐</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/u012168038" target="_blank"><span class="blog-title">夜殇</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">08-30</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					7万+
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/u012168038/article/details/77715439" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.8","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-8-77715439-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"8","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/u012168038/article/details/77715439"}'  data-report-query='spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-77715439-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-77715439-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">概述之前闲着没事,就利用<em>Git</em>hub建了一个个人<em>博客</em>网站,效果还不错,今天就来分享一下. 
+建立自己个人<em>博客</em>网站的好处: 
+1.面试装逼,这个不必多说&hellip; 
+2.把平时积累的知识和项目记录下来,方便日后查看使用 
+3.不受其他<em>博客</em>平台的限制,之前我一直用CSDN写<em>博客</em>,后来为了响应国家号召就强制大家实名制了,这点就让我很不爽准备工作开始之前,先大致介绍一下用到的技术和相关概念<em>Git</em>hub是什么:<em>Git</em></div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/qq_46036214/article/details/110137239"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.9","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-9-110137239-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"9","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/qq_46036214/article/details/110137239"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/qq_46036214/article/details/110137239" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.9","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-9-110137239-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"9","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/qq_46036214/article/details/110137239"}'  data-report-query='spm=1001.2101.3001.6650.9&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-9-110137239-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-9-110137239-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">在<em>Git</em>ee搭建属于自己的<em>博客</em></div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/qq_46036214" target="_blank"><span class="blog-title">玖柒IT</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">11-25</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					2万+
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/qq_46036214/article/details/110137239" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.9","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-9-110137239-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"9","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/qq_46036214/article/details/110137239"}'  data-report-query='spm=1001.2101.3001.6650.9&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-9-110137239-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-9-110137239-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>git</em>(版本控制工具)链接：https://pan.baidu.com/s/19V8BH4kO9h6eVNFhMzAU4w
+提取码：chgo一个类似于 Linux 的终端typora(md文件编辑器)链接：https://pan.baidu.com/s/1jQRZll7yCpMEclnVrQWq2g
+提取码：plm9node.js(必备)链接：https://pan.baidu.com/s/1ivgZqnoLOr0m1trfzRIJyQ
+提取码：ohy0在 任意处打开 <em>git</em> 或者 cmd ，检查安装是否成</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_38535812/15548145"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.10","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-10-15548145-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"10","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_38535812/15548145"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_38535812/15548145" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.10","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-10-15548145-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"10","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_38535812/15548145"}'  data-report-query='spm=1001.2101.3001.6650.10&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-10-15548145-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-10-15548145-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1"><em>Git</em>分支管理详解</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">03-03</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_38535812/15548145" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.10","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-10-15548145-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"10","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_38535812/15548145"}'  data-report-query='spm=1001.2101.3001.6650.10&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-10-15548145-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-10-15548145-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">在上一篇<em>博客</em>中我们主要讲解了<em>Git</em>远程仓库，相信大家对远程的<em>Git</em>仓库有一定的了解，嘿嘿。在这一篇<em>博客</em>中我们来在大家讲解一下<em>Git</em>分支管理，这可以说是<em>Git</em>的又一大特点。下面我们就来学习一下<em>Git</em>分支管理吧。我们先来说一个简单的案例吧，你们团队中有多个人再开发一下项目，一同事再开发一个新的功能，需要一周时间完成，他写了其中的30%还没有写完，如果他提交了这个版本，那么团队中的其它人就不能继续开发了。但是等到他全部写完再全部提交，大家又看不到他的开发进度，也不能继续干活，这如何是好呢？对于上面的这个问题，我们就可以用分支管理的办法来解决，一同事开发新功能他可以创建一个属于他自己的分支，其它同事暂</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_42099151/16057875"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.11","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-11-16057875-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"11","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_42099151/16057875"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_42099151/16057875" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.11","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-11-16057875-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"11","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_42099151/16057875"}'  data-report-query='spm=1001.2101.3001.6650.11&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-11-16057875-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-11-16057875-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1"><em>git</em>_blog:个人<em>博客</em>源码管理</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">03-23</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_42099151/16057875" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.11","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~Rate-11-16057875-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"11","strategy":"2~default~CTRLIST~Rate","dest":"https://download.csdn.net/download/weixin_42099151/16057875"}'  data-report-query='spm=1001.2101.3001.6650.11&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-11-16057875-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7ERate-11-16057875-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>git</em>_blog:个人<em>博客</em>源码管理</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_39841365/11504771"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.12","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-12-11504771-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"12","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_39841365/11504771"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_39841365/11504771" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.12","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-12-11504771-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"12","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_39841365/11504771"}'  data-report-query='spm=1001.2101.3001.6650.12&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-12-11504771-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-12-11504771-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">基于<em>git</em>issue的轻量级个人<em>博客</em>模板</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">08-09</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_39841365/11504771" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.12","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-12-11504771-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"12","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_39841365/11504771"}'  data-report-query='spm=1001.2101.3001.6650.12&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-12-11504771-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-12-11504771-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>git</em>blog 这是一个极轻量级的，基于<em>git</em> issue的个人<em>博客</em>模板，非常适合于想在<em>Git</em>Hub pages上<em>搭建个人博客</em>的人。</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_38646645/14045309"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.13","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-13-14045309-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"13","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_38646645/14045309"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_38646645/14045309" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.13","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-13-14045309-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"13","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_38646645/14045309"}'  data-report-query='spm=1001.2101.3001.6650.13&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-13-14045309-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-13-14045309-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">【前端技术】从零开始在<em>git</em>hub创建个人主页或技术<em>博客</em></div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">01-08</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_38646645/14045309" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.13","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-13-14045309-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"13","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_38646645/14045309"}'  data-report-query='spm=1001.2101.3001.6650.13&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-13-14045309-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-13-14045309-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">闲在家里，打算出一个前端系列的技术<em>博客</em>，讲...对于新手来说，在<em>git</em>hub搭建免费的个人主页，不失为一个很好的练手方法，以下将记录我在很久以前在<em>git</em>hub<em>搭建个人博客</em>的经历。 1、注册<em>git</em>hub账号 <em>Git</em>Hub是一个面向开</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_38593723/14037714"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.14","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-14-14037714-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"14","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_38593723/14037714"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_38593723/14037714" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.14","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-14-14037714-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"14","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_38593723/14037714"}'  data-report-query='spm=1001.2101.3001.6650.14&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-14-14037714-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-14-14037714-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1"><em>Git</em>常见的报错</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">01-07</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_38593723/14037714" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.14","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-14-14037714-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"14","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_38593723/14037714"}'  data-report-query='spm=1001.2101.3001.6650.14&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-14-14037714-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-14-14037714-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">这个方法是从国外一个人的<em>博客</em>中找的，具体原理是什么我还不太清楚，但是觉得似乎有一点点风险。先占个坑，假如在后面学习过程中能够知道是什么原理了再来补上。 第二种： fatal:remote origin already exists  命令...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/m0_52549699/19777941"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.15","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-15-19777941-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"15","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/m0_52549699/19777941"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/m0_52549699/19777941" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.15","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-15-19777941-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"15","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/m0_52549699/19777941"}'  data-report-query='spm=1001.2101.3001.6650.15&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-15-19777941-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-15-19777941-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">使用Hexo免费搭建并发布个人<em>博客</em>网站.md</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">06-22</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/m0_52549699/19777941" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.15","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-15-19777941-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"15","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/m0_52549699/19777941"}'  data-report-query='spm=1001.2101.3001.6650.15&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-15-19777941-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-15-19777941-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">Hexo<em>搭建个人博客</em></div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url="https://download.csdn.net/download/weixin_35827671/86260262"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.16","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-16-86260262-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"16","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_35827671/86260262"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://download.csdn.net/download/weixin_35827671/86260262" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.16","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-16-86260262-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"16","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_35827671/86260262"}'  data-report-query='spm=1001.2101.3001.6650.16&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-16-86260262-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-16-86260262-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">pengqiangsheng#blog-vuepress#用hexo和<em>git</em>hub<em>搭建个人博客</em>小站全攻略1</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">07-25</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://download.csdn.net/download/weixin_35827671/86260262" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.16","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~OPENSEARCH~Rate-16-86260262-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"16","strategy":"2~default~OPENSEARCH~Rate","dest":"https://download.csdn.net/download/weixin_35827671/86260262"}'  data-report-query='spm=1001.2101.3001.6650.16&utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-16-86260262-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EOPENSEARCH%7ERate-16-86260262-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">1.<em>git</em>Hub是一个面向开源及私有软件项目的托管平台，因为只支持<em>git</em> 作为唯一的版本库格式进行托管，故名<em>git</em>Hub 2.一个<em>博客</em>网站建立好之后，想让所有人</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url="https://blog.csdn.net/JanuaryFM/article/details/120535660"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.17","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-17-120535660-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"17","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/JanuaryFM/article/details/120535660"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://blog.csdn.net/JanuaryFM/article/details/120535660" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.17","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-17-120535660-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"17","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/JanuaryFM/article/details/120535660"}'  data-report-query='spm=1001.2101.3001.6650.17&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-17-120535660-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-17-120535660-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1"><em>Git</em>使用教程（超详细）</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info">
+					<a href="https://blog.csdn.net/JanuaryFM" target="_blank"><span class="blog-title">JanuaryFM的博客</span></a>
+				</div>
+				<div class="info display-flex">
+					<span class="info-block time">09-28</span>
+					<span class="info-block read"><img class="read-img" src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					1万+
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://blog.csdn.net/JanuaryFM/article/details/120535660" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.17","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-17-120535660-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"17","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/JanuaryFM/article/details/120535660"}'  data-report-query='spm=1001.2101.3001.6650.17&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-17-120535660-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-17-120535660-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1">1.<em>Git</em>是什么
+
+<em>Git</em>（读音为/gɪt/）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。
+
+2.<em>GIt</em>安装（Windows）
+
+在Windows上使用<em>Git</em>，先从<em>Git</em>官网直接下载安装程序，选择指定系统下载，然后按默认选项安 装即可。安装完成后，在开始菜单里找到&ldquo;<em>Git</em>&rdquo;-&gt;&ldquo;<em>Git</em> Bash&rdquo;，显示出类似命令行的窗口，说明<em>Git</em>安装成功！
+
+下载地址：（下载完成，直接默认安装）
+
+<em>Git</em> - Downloads (<em>git</em>-scm...</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="recommend-item-box type_chatgpt clearfix" data-url="https://wenku.csdn.net/answer/9f1456b6e7cc11edbcb5fa163eeb3507"  data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.18","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-chatgpt-2~default~OPENSEARCH~Position-18-9f1456b6e7cc11edbcb5fa163eeb3507-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"18","strategy":"2~default~OPENSEARCH~Position","dest":"https://wenku.csdn.net/answer/9f1456b6e7cc11edbcb5fa163eeb3507"}'>
+	<div class="content-box">
+		<div class="content-blog display-flex">
+			<div class="title-box">
+				<a href="https://wenku.csdn.net/answer/9f1456b6e7cc11edbcb5fa163eeb3507" class="tit" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.18","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-chatgpt-2~default~OPENSEARCH~Position-18-9f1456b6e7cc11edbcb5fa163eeb3507-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"18","strategy":"2~default~OPENSEARCH~Position","dest":"https://wenku.csdn.net/answer/9f1456b6e7cc11edbcb5fa163eeb3507"}'  data-report-query='spm=1001.2101.3001.6650.18&utm_medium=distribute.pc_relevant.none-task-chatgpt-2%7Edefault%7EOPENSEARCH%7EPosition-18-9f1456b6e7cc11edbcb5fa163eeb3507-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-chatgpt-2%7Edefault%7EOPENSEARCH%7EPosition-18-9f1456b6e7cc11edbcb5fa163eeb3507-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+					<div class="left ellipsis-online ellipsis-online-1">windows <em>git</em> 本地搭建</div>
+					<div class="tag">最新发布</div>
+				</a>
+			</div>
+			<div class="info-box display-flex">
+				<div class="info display-flex">
+					<span class="info-block">05-01</span>
+				</div>
+			</div>
+		</div>
+		<div class="desc-box">
+			<a href="https://wenku.csdn.net/answer/9f1456b6e7cc11edbcb5fa163eeb3507" target="_blank"  data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.18","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-chatgpt-2~default~OPENSEARCH~Position-18-9f1456b6e7cc11edbcb5fa163eeb3507-blog-105034974.235^v38^pc_relevant_anti_vip\",\"dist_request_id\":\"1686748497088_72649\"}","dist_request_id":"1686748497088_72649","ab_strategy":"increase_t0_anti_vip","index":"18","strategy":"2~default~OPENSEARCH~Position","dest":"https://wenku.csdn.net/answer/9f1456b6e7cc11edbcb5fa163eeb3507"}'  data-report-query='spm=1001.2101.3001.6650.18&utm_medium=distribute.pc_relevant.none-task-chatgpt-2%7Edefault%7EOPENSEARCH%7EPosition-18-9f1456b6e7cc11edbcb5fa163eeb3507-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-chatgpt-2%7Edefault%7EOPENSEARCH%7EPosition-18-9f1456b6e7cc11edbcb5fa163eeb3507-blog-105034974.235%5Ev38%5Epc_relevant_anti_vip'>
+				<div class="desc ellipsis-online ellipsis-online-1"><em>Git</em>是一种分布式版本控制系统，它被广泛用于协作编程的开发中。在进行协作开发时，我们通常需要用到<em>Git</em>来管理代码的版本。在本地搭建<em>Git</em>，可以实现更高效的协作开发方式。下面介绍在Windows系统上搭建<em>Git</em>的步骤。
+
+1. 首先需要安装<em>Git</em>。可以从<em>Git</em>的官网（https://<em>git</em>-scm.com/download/win）下载最新版本的<em>Git</em>安装包进行安装。安装完成后，在命令行中输入<em>git</em> --version查看<em>Git</em>是否成功安装。
+
+2. 创建一个本地仓库。在本地创建一个文件夹，使用命令行进入该文件夹，然后执行<em>git</em> init命令，即可将该文件夹初始化为一个<em>Git</em>本地仓库。
+
+3. 添加代码到本地仓库。将需要管理的代码复制或移动到该文件夹中，然后在命令行中执行<em>git</em> add .命令，即可将代码添加到<em>Git</em>本地仓库中。
+
+4. 提交代码到本地仓库。在命令行中执行<em>git</em> commit命令，即可将代码提交到<em>Git</em>本地仓库中。
+
+5. 分支管理。可以使用<em>git</em> branch命令查看本地分支，并使用<em>git</em> checkout命令切换分支。也可以使用<em>git</em> merge将分支合并。
+
+6. 远程仓库。可以将本地仓库推送到远程仓库中，也可以从远程仓库中拉取代码到本地仓库中。使用<em>git</em> remote add命令添加远程仓库，使用<em>git</em> push命令将本地仓库推送到远程仓库中，使用<em>git</em> pull命令将远程仓库中的代码拉取到本地仓库中。
+
+总之，在Windows系统上搭建<em>Git</em>本地仓库，可以让我们更好地管理代码，在协作开发中更加高效地完成工作。</div>
+			</a>
+		</div>
+	</div>
+</div>
+              </div>
+<div id="recommendNps" class="recommend-nps-box common-nps-box">
+  <h3 class="aside-title">“相关推荐”对你有帮助么？</h3>
+  <div class="aside-content">
+      <ul class="newnps-list">
+          <li class="newnps-item" data-type="非常没帮助">
+              <div class="newnps-img-box">
+                  <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel1.png" alt="">
+                  <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey1.png" alt="">
+              </div>
+              <div class="newnps-text">非常没帮助</div>
+          </li>
+          <li class="newnps-item" data-type="没帮助">
+              <div class="newnps-img-box">
+                  <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel2.png" alt="">
+                  <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey2.png" alt="">
+              </div>
+              <div class="newnps-text">没帮助</div>
+          </li>
+          <li class="newnps-item" data-type="一般">
+              <div class="newnps-img-box">
+                  <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel3.png" alt="">
+                  <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey3.png" alt="">
+              </div>
+              <div class="newnps-text">一般</div>
+          </li>
+          <li class="newnps-item" data-type="有帮助">
+              <div class="newnps-img-box">
+                  <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel4.png" alt="">
+                  <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey4.png" alt="">
+              </div>
+              <div class="newnps-text">有帮助</div>
+          </li>
+          <li class="newnps-item" data-type="非常有帮助">
+              <div class="newnps-img-box">
+                  <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel5.png" alt="">
+                  <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey5.png" alt="">
+              </div>
+              <div class="newnps-text">非常有帮助</div>
+          </li>
+      </ul>
+      <div class="newnps-form-box">
+      <div class="newnps-form">
+          <input type="text" placeholder="请输入建议或反馈后点击提交" class="newnps-input">
+          <span class="newnps-btn">提交</span>
+      </div>
+      </div>
+  </div>
+</div><div class="blog-footer-bottom" style="margin-top:10px;"></div>
+<script src="https://g.csdnimg.cn/common/csdn-footer/csdn-footer.js" data-isfootertrack="false" type="text/javascript"></script>
+<script type="text/javascript">
+    window.csdn.csdnFooter.options = {
+        el: '.blog-footer-bottom',
+        type: 2
+    }
+</script>          </main>
+<aside class="blog_container_aside">
+<div id="asideProfile" class="aside-box">
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/weixin_42304193" target="_blank" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4121","dest":"https://blog.csdn.net/weixin_42304193","ab":"new"}'>
+                <img src="https://profile-avatar.csdnimg.cn/9f5fdc03d4424ff9ba3d297e4ef0e542_weixin_42304193.jpg!1" class="avatar_pic">
+            </a>
+        </div>
+        <div class="user-info d-flex flex-column profile-intro-name-box">
+            <div class="profile-intro-name-boxTop">
+                <a href="https://blog.csdn.net/weixin_42304193" target="_blank" class="" id="uid" title="程序员 小明" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4122","dest":"https://blog.csdn.net/weixin_42304193","ab":"new"}'>
+                    <span class="name " username="weixin_42304193">程序员 小明</span>
+                </a>
+                <span>
+                </span>
+                <span class="flag expert-blog">
+                <span class="bubble">CSDN认证博客专家</span>
+                </span>
+                <span class="flag company-blog">
+                <span class="bubble">CSDN认证企业博客</span>
+                </span>
+            </div>
+            <div class="profile-intro-name-boxFooter">
+                <span class="personal-home-page personal-home-years" title="已加入 CSDN 5年">码龄5年</span>
+                    <span class="personal-home-page">
+                    <a class="personal-home-certification" href="https://i.csdn.net/#/uc/profile?utm_source=14998968" target="_blank" title="暂无认证">
+                    <img src="https://csdnimg.cn/identity/nocErtification.png" alt="">
+                    暂无认证
+                    </a>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="29">
+            <a href="https://blog.csdn.net/weixin_42304193" data-report-click='{"mod":"1598321000_001","spm":"1001.2101.3001.4310"}' data-report-query="t=1">  
+                <dt><span class="count">29</span></dt>
+                <dd class="font">原创</dd>
+            </a>
+        </dl>
+        <dl class="text-center" data-report-click='{"mod":"1598321000_002","spm":"1001.2101.3001.4311"}' title="75836">
+            <a href="https://blog.csdn.net/rank/list/weekly" target="_blank">
+                <dt><span class="count">7万+</span></dt>
+                <dd class="font">周排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" title="370088">
+            <a href="https://blog.csdn.net/rank/list/total" data-report-click='{"mod":"1598321000_003","spm":"1001.2101.3001.4312"}' target="_blank">
+                <dt><span class="count">37万+</span></dt>
+                <dd class="font">总排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" style="min-width:58px" title="66629">  
+            <dt><span class="count">6万+</span></dt>
+            <dd>访问</dd>
+        </dl>
+        <dl class="text-center" title="4级,点击查看等级说明">
+            <dt><a href="https://blog.csdn.net/blogdevteam/article/details/103478461" target="_blank">
+                <img class="level" src="https://csdnimg.cn/identity/blog4.png">
+            </a>
+            </dt>
+            <dd>等级</dd>
+        </dl>
+    </div>
+    <div class="item-rank"></div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="992">
+            <dt><span class="count">992</span></dt>
+            <dd>积分</dd>
+        </dl>
+         <dl class="text-center" id="fanBox" title="36">
+            <dt><span class="count" id="fan">36</span></dt>
+            <dd>粉丝</dd>
+        </dl>
+        <dl class="text-center" title="47">
+            <dt><span class="count">47</span></dt>
+            <dd>获赞</dd>
+        </dl>
+        <dl class="text-center" title="13">
+            <dt><span class="count">13</span></dt>
+            <dd>评论</dd>
+        </dl>
+        <dl class="text-center" title="324">
+            <dt><span class="count">324</span></dt>
+            <dd>收藏</dd>
+        </dl>
+    </div>
+    <div class="aside-box-footer" data-report-view='{"spm":"3001.4296"}'>
+        <div class="badge-box d-flex">
+            <div class="badge d-flex">
+                <div class="icon-badge" title="持续创作">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/chizhiyiheng@240.png" alt="持续创作">
+                    </div>
+                </div>
+                <div class="icon-badge" title="创作能手">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qixiebiaobing4@240.png" alt="创作能手">
+                    </div>
+                </div>
+                <div class="icon-badge" title="技术圈认证">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/blog_normal_medal@240.png" alt="技术圈认证">
+                    </div>
+                </div>
+                <div class="icon-badge" title="阅读者勋章">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/yuedu7@240.png" alt="阅读者勋章">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-intro-name-boxOpration">
+        <div class="opt-letter-watch-box">
+        <a class="bt-button personal-letter" href="https://im.csdn.net/chat/weixin_42304193" target="_blank" rel="noopener">私信</a>
+        </div>
+        <div class="opt-letter-watch-box"> 
+            <a class="personal-watch bt-button" id="btnAttent" >关注</a>  
+        </div>
+    </div>
+</div>
+ <div id="asideSearchArticle" class="aside-box">
+	<div class="aside-content search-comter">
+    <div class="aside-search aside-search-blog">         
+        <input type="text" class="input-serch-blog" name="" autocomplete="off" value="" id="search-blog-words" placeholder="搜博主文章">
+        <a class="btn-search-blog" data-report-click='{"spm":"1001.2101.3001.9182"}'>
+                    <img src="//csdnimg.cn/cdn/content-toolbar/csdn-sou.png?v=1587021042">
+        </a>
+    </div>
+    </div>
+</div>
+
+
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list">
+			<li>
+				<a href="https://blog.csdn.net/weixin_42304193/article/details/104869170" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_42304193/article/details/104869170","ab":"new"}'>
+				egg.js和nest.js的对比
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">9700</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/weixin_42304193/article/details/104620488" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_42304193/article/details/104620488","ab":"new"}'>
+				egg.js中的logger日志
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">6513</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/weixin_42304193/article/details/89607394" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_42304193/article/details/89607394","ab":"new"}'>
+				python把mysql数据库中的数据表写入csv文件
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">5565</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/weixin_42304193/article/details/94997904" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_42304193/article/details/94997904","ab":"new"}'>
+				python星座分析
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">5437</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blog.csdn.net/weixin_42304193/article/details/89608169" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blog.csdn.net/weixin_42304193/article/details/89608169","ab":"new"}'>
+				读取csv文件写入mysql数据库
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">5357</span>
+                </a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">分类专栏</h3>
+    <div class="aside-content">
+        <ul>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9746237.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9746237.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756754.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        node.js
+                    </span>
+                </a>
+                <span class="special-column-num">14篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9755222.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9755222.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        egg
+                    </span>
+                </a>
+                <span class="special-column-num">8篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9805468.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9805468.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756923.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        nest
+                    </span>
+                </a>
+                <span class="special-column-num">1篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9323336.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9323336.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756757.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        tensorflow
+                    </span>
+                </a>
+                <span class="special-column-num">4篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9323337.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9323337.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756754.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        深度学习
+                    </span>
+                </a>
+                <span class="special-column-num">4篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8900918.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8900918.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756738.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        python
+                    </span>
+                </a>
+                <span class="special-column-num">4篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8900919.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8900919.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756724.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        mysql
+                    </span>
+                </a>
+                <span class="special-column-num">2篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8956042.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8956042.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        mongodb
+                    </span>
+                </a>
+                <span class="special-column-num">1篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8956043.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8956043.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        数据分析
+                    </span>
+                </a>
+                <span class="special-column-num">4篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8956044.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8956044.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756925.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        爬虫
+                    </span>
+                </a>
+                <span class="special-column-num">2篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9165638.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9165638.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756738.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        机器学习
+                    </span>
+                </a>
+                <span class="special-column-num">1篇</span>
+            </li>
+        </ul>
+    </div>
+    <p class="text-center">
+        <a class="flexible-btn" data-fbox="aside-archive"><img class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowDownWhite.png" alt=""></a>
+    </p>
+</div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_42304193/article/details/94997904#comments_26991698" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/94997904#comments_26991698","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/94997904#comments_26991698","ab":"new"}'>python星座分析</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/m0_68147104" class="user-name" target="_blank">m0_68147104: </a>
+                    <span class="code-comments">作者大大可以加一下QQ吗有问题请教</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_42304193/article/details/101639276#comments_23271256" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/101639276#comments_23271256","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/101639276#comments_23271256","ab":"new"}'>tensorflow自然语言处理(自动生成古诗)</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/m0_56286798" class="user-name" target="_blank">ShireYoung: </a>
+                    <span class="code-comments">求一下训练数据集可以么</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_42304193/article/details/92461582#comments_20380413" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/92461582#comments_20380413","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/92461582#comments_20380413","ab":"new"}'>scrapy-redis断点续爬，持久化爬虫和url去重，爬取京东图书</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/m0_47633937" class="user-name" target="_blank">m0_47633937: </a>
+                    <span class="code-comments">请问一下，这种持久化存储在redis宕机后，redis中的数据没有了吧？</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_42304193/article/details/104485583#comments_15109866" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/104485583#comments_15109866","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/104485583#comments_15109866","ab":"new"}'>node.js操作mysql数据库和sql server数据库</a>
+                <p class="comment ellipsis">
+                    <a href="https://yangyongli.blog.csdn.net" class="user-name" target="_blank">杨 戬: </a>
+                    <span class="code-comments">少年,我看你骨骼精奇,不如来我博客看看可好</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/weixin_42304193/article/details/104869170#comments_14479590" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/104869170#comments_14479590","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blog.csdn.net/weixin_42304193/article/details/104869170#comments_14479590","ab":"new"}'>egg.js和nest.js的对比</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/qq_28126731" class="user-name" target="_blank">qq_28126731: </a>
+                    <span class="code-comments">nestjs eggjs 190975193交流群 群内有免费的视频教程</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="asideNewNps" class="aside-box common-nps-box">
+    <h3 class="aside-title">您愿意向朋友推荐“博客详情页”吗？</h3>
+    <div class="aside-content">
+        <ul class="newnps-list">
+            <li class="newnps-item" data-type="强烈不推荐">
+                <div class="newnps-img-box">
+                    <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel1.png" alt="">
+                    <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey1.png" alt="">
+                </div>
+                <div class="newnps-text">强烈不推荐</div>
+            </li>
+            <li class="newnps-item" data-type="不推荐">
+                <div class="newnps-img-box">
+                    <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel2.png" alt="">
+                    <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey2.png" alt="">
+                </div>
+                <div class="newnps-text">不推荐</div>
+            </li>
+            <li class="newnps-item" data-type="一般般">
+                <div class="newnps-img-box">
+                    <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel3.png" alt="">
+                    <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey3.png" alt="">
+                </div>
+                <div class="newnps-text">一般般</div>
+            </li>
+            <li class="newnps-item" data-type="推荐">
+                <div class="newnps-img-box">
+                    <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel4.png" alt="">
+                    <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey4.png" alt="">
+                </div>
+                <div class="newnps-text">推荐</div>
+            </li>
+            <li class="newnps-item" data-type="强烈推荐">
+                <div class="newnps-img-box">
+                    <img class="newnps-img active" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeel5.png" alt="">
+                    <img class="newnps-img default" src="https://csdnimg.cn/release/blogv2/dist/pc/img/npsFeelGrey5.png" alt="">
+                </div>
+                <div class="newnps-text">强烈推荐</div>
+            </li>
+        </ul>
+        <div class="newnps-form-box">
+        <div class="newnps-form">
+            <input type="text" placeholder="请输入建议或反馈后点击提交" class="newnps-input">
+            <span class="newnps-btn">提交</span>
+        </div>
+        </div>
+    </div>
+</div>
+<div id="asideArchive" class="aside-box" style="display:block!important; width:300px;">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix">
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/weixin_42304193/article/details/106351131" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_42304193/article/details/106351131","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_42304193/article/details/106351131","ab":"new"}'>查看sql语句的执行计划</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/weixin_42304193/article/details/105402067" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_42304193/article/details/105402067","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_42304193/article/details/105402067","ab":"new"}'>npm发布自己的package</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blog.csdn.net/weixin_42304193/article/details/104869170" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blog.csdn.net/weixin_42304193/article/details/104869170","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blog.csdn.net/weixin_42304193/article/details/104869170","ab":"new"}'>egg.js和nest.js的对比</a>
+            </li>
+        </ul>
+        <div class="archive-bar"></div>
+        <div class="archive-box">
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_42304193?type=blog&amp;year=2020&amp;month=05" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/weixin_42304193?type=blog&amp;year=2020&amp;month=05"}'><span class="year">2020年</span><span class="num">16篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blog.csdn.net/weixin_42304193?type=blog&amp;year=2019&amp;month=09" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blog.csdn.net/weixin_42304193?type=blog&amp;year=2019&amp;month=09"}'><span class="year">2019年</span><span class="num">13篇</span></a></div>
+        </div>
+    </div>
+</div>
+	<div id="footerRightAds" class="isShowFooterAds">
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1076724771190722"
+     crossorigin="anonymous"></script>
+<!-- PC-博客-详情页-左下视窗-50-99 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="7418711749"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=57&adId=1031240&adBlockFlag=0&a=1031240&c=0&k=Git搭建个人博客&spm=1001.2101.3001.5001&articleId=105034974&d=1&t=3&u=40887aa4229545f9966a5454bd73f4e3" style="display: block;width: 0px;height: 0px;"></div>
+		</div>
+	</div>
+    <!-- 详情页显示目录 -->
+<!--文章目录-->
+<div id="asidedirectory" class="aside-box">
+    <div class='groupfile' id="directory">
+        <h3 class="aside-title">目录</h3>
+        <div class="align-items-stretch group_item">
+            <div class="pos-box">
+            <div class="scroll-box">
+                <div class="toc-box"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</aside>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-tooltip/2.7/user-tooltip.js"></script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-medal/2.0.0/user-medal.js"></script>        </div>
+<div class="recommend-right align-items-stretch clearfix" id="rightAside" data-type="recommend">
+    <aside class="recommend-right_aside">
+        <div id="recommend-right" >
+                                <div class="programmer1Box">
+                        <div id="kp_box_530" data-pid="530"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1076724771190722"
+     crossorigin="anonymous"></script>
+<!-- PC-博客-详情页-右上视窗-50-99 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1041005650"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=530&adId=1031239&adBlockFlag=0&a=1031239&c=0&k=Git搭建个人博客&spm=1001.2101.3001.4647&articleId=105034974&d=1&t=3&u=f46bc41d77994504b9bdd9a3bffec7b4" style="display: block;width: 0px;height: 0px;"></div>
+                    </div>
+            <div class='flex-column aside-box groupfile' id="groupfile">
+                <div class="groupfile-div">
+                <h3 class="aside-title">目录</h3>
+                <div class="align-items-stretch group_item">
+                    <div class="pos-box">
+                        <div class="scroll-box">
+                            <div class="toc-box"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class='aside-box kind_person d-flex flex-column'>
+                    <h3 class="aside-title">分类专栏</h3>
+                    <div class="align-items-stretch kindof_item" id="kind_person_column">
+                        <div class="aside-content">
+                            <ul>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9746237.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9746237.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756754.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            node.js
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">14篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9755222.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9755222.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            egg
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">8篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9805468.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9805468.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756923.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            nest
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">1篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9323336.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9323336.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756757.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            tensorflow
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">4篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9323337.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9323337.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756754.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            深度学习
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">4篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8900918.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8900918.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756738.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            python
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">4篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8900919.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8900919.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756724.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            mysql
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">2篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8956042.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8956042.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            mongodb
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">1篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8956043.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8956043.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756927.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            数据分析
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">4篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_8956044.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_8956044.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756925.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            爬虫
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">2篇</span>
+                                </li>
+                                <li>
+                                    <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/weixin_42304193/category_9165638.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/weixin_42304193/category_9165638.html","ab":"new"}'>
+                                        <div class="special-column-bar "></div>
+                                        <img src="https://img-blog.csdnimg.cn/20201014180756738.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                                        <span class="">
+                                            机器学习
+                                        </span>
+                                    </a>
+                                    <span class="special-column-num">1篇</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<div class="recommend-right1  align-items-stretch clearfix" id="rightAsideConcision" data-type="recommend">
+    <aside class="recommend-right_aside">
+        <div id="recommend-right-concision" >
+            <div class='flex-column aside-box groupfile' id="groupfileConcision">
+                <div class="groupfile-div1">
+                <h3 class="aside-title">目录</h3>
+                <div class="align-items-stretch group_item">
+                    <div class="pos-box">
+                        <div class="scroll-box">
+                            <div class="toc-box"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>
+
+      </div>
+      <div class="mask-dark"></div>
+      <div class="skin-boxshadow"></div>
+      <div class="directory-boxshadow"></div>
+<div class="comment-side-box-shadow comment-side-tit-close" id="commentSideBoxshadow">
+<div class="comment-side-content">
+	<div class="comment-side-tit">
+		<span class="comment-side-tit-count">评论</span>	
+	<img class="comment-side-tit-close" src="https://csdnimg.cn/release/blogv2/dist/pc/img/closeBt.png"></div>
+	<div id="pcCommentSideBox" class="comment-box comment-box-new2 " style="display:block">
+		<div class="comment-edit-box d-flex">
+			<div class="user-img">
+				<a href="https://blog.csdn.net/Qi_Chong" target="_blank">
+					<img src="https://profile-avatar.csdnimg.cn/default.jpg!1">
+				</a>
+			</div>
+			<form id="commentform">
+				<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="欢迎高质量的评论，低质的评论会被折叠" maxlength="1000"></textarea>
+				<div class="comment-reward-box" style="background-image: url('https://img-home.csdnimg.cn/images/20230131025301.png');">
+          <a class="btn-remove-reward"></a>
+          <div class="form-reward-box">
+            <div class="info">
+              成就一亿技术人!
+            </div>
+            <div class="price-info">
+              拼手气红包<span class="price">6.0元</span>
+            </div>
+          </div>
+        </div>
+        <div class="comment-operate-box">
+					<div class="comment-operate-l">
+						<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					</div>
+					<div class="comment-operate-c">
+						&nbsp;
+					</div>
+					<div class="comment-operate-r">
+            <div class="comment-operate-item comment-reward">
+							<img class="comment-operate-img" data-url="https://csdnimg.cn/release/blogv2/dist/pc/img/" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentReward.png" alt="红包">
+							<span class="comment-operate-tip">添加红包</span>
+						</div>
+						<div class="comment-operate-item comment-emoticon">
+							<img class="comment-operate-img" data-url="https://csdnimg.cn/release/blogv2/dist/pc/img/" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentEmotionIcon.png" alt="表情包">
+							<span class="comment-operate-tip">插入表情</span>
+							<div class="comment-emoticon-box comment-operate-isshow">
+								<div class="comment-emoticon-img-box"></div>
+							</div>
+						</div>
+						<div class="comment-operate-item comment-code">
+							<img class="comment-operate-img" data-url="https://csdnimg.cn/release/blogv2/dist/pc/img/" src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCodeIcon.png" alt="表情包">
+							<span class="comment-operate-tip">代码片</span>
+							<div class="comment-code-box comment-operate-isshow">
+								<ul id="commentCode">
+									<li><a data-code="html">HTML/XML</a></li>
+									<li><a data-code="objc">objective-c</a></li>
+									<li><a data-code="ruby">Ruby</a></li>
+									<li><a data-code="php">PHP</a></li>
+									<li><a data-code="csharp">C</a></li>
+									<li><a data-code="cpp">C++</a></li>
+									<li><a data-code="javascript">JavaScript</a></li>
+									<li><a data-code="python">Python</a></li>
+									<li><a data-code="java">Java</a></li>
+									<li><a data-code="css">CSS</a></li>
+									<li><a data-code="sql">SQL</a></li>
+									<li><a data-code="plain">其它</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="comment-operate-item">
+							<input type="hidden" id="comment_replyId" name="comment_replyId">
+							<input type="hidden" id="article_id" name="article_id" value="105034974">
+							<input type="hidden" id="comment_userId" name="comment_userId" value="">
+							<input type="hidden" id="commentId" name="commentId" value="">
+							<a data-report-click='{"mod":"1582594662_003","spm":"1001.2101.3001.4227","ab":"new"}'>
+							<input type="submit" class="btn-comment btn-comment-input" value="评论">
+							</a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="comment-list-container">
+			<div class="comment-list-box comment-operate-item">
+			</div>
+			<div id="lookFlodComment" class="look-flod-comment">
+					<span class="count"></span>&nbsp;条评论被折叠&nbsp;<a class="look-more-flodcomment">查看</a>
+			</div>
+			<div class="opt-box text-center">
+				<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+			</div>
+		</div>
+	</div>
+	<div id="pcFlodCommentSideBox" class="pc-flodcomment-sidebox">
+		<div class="comment-fold-tit"><span id="lookUnFlodComment" class="back"><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentArrowLeftWhite.png" alt=""></span>被折叠的&nbsp;<span class="count"></span>&nbsp;条评论
+		 <a href="https://blogdev.blog.csdn.net/article/details/122245662" class="tip" target="_blank">为什么被折叠?</a>
+		 <a href="https://bbs.csdn.net/forums/FreeZone" class="park" target="_blank">
+		 <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/iconPark.png">到【灌水乐园】发言</a>                                
+		</div>
+		<div class="comment-fold-content"></div>
+		<div id="lookBadComment" class="look-bad-comment side-look-comment">
+			<a class="look-more-comment">查看更多评论<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentArrowDownWhite.png" alt=""></a>
+		</div>
+	</div>
+</div>
+<div class="comment-rewarddialog-box">
+  <div class="form-box">
+    <div class="title-box">
+      添加红包
+      <a class="btn-form-close"></a>
+    </div>
+    <form id="commentRewardForm">
+      <div class="ipt-box">
+        <label for="txtName">祝福语</label>
+        <div class="ipt-btn-box">
+          <input type="text" name="name" id="txtName" autocomplete="off" maxlength="50">
+          <a class="btn-ipt btn-random"></a>
+        </div>
+        <p class="notice">请填写红包祝福语或标题</p>
+      </div>
+      <div class="ipt-box">
+        <label for="txtSendAmount">红包数量</label>
+        <div class="ipt-txt-box">
+          <input type="text" name="sendAmount" maxlength="4" id="txtSendAmount" placeholder="请填写红包数量(最小10个)" autocomplete="off">
+          <span class="after-txt">个</span>
+        </div>
+        <p class="notice">红包个数最小为10个</p>
+      </div>
+      <div class="ipt-box">
+        <label for="txtMoney">红包总金额</label>
+        <div class="ipt-txt-box error">
+          <input type="text" name="money" maxlength="5" id="txtMoney" placeholder="请填写总金额(最低5元)" autocomplete="off">
+          <span class="after-txt">元</span>
+        </div>
+        <p class="notice">红包金额最低5元</p>
+      </div>
+      <div class="balance-info-box">
+        <label>余额支付</label>
+        <div class="balance-info">
+          当前余额<span class="balance">3.43</span>元
+          <a href="https://i.csdn.net/#/wallet/balance/recharge" class="link-charge" target="_blank">前往充值 ></a>
+        </div>
+      </div>
+      <div class="opt-box">
+        <div class="pay-info">
+          需支付：<span class="price">10.00</span>元
+        </div>
+        <button type="button" class="ml-auto btn-cancel">取消</button>
+        <button type="button" class="ml8 btn-submit" disabled="true">确定</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="rr-guide-box">
+  <div class="rr-first-box">
+    <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/guideRedReward02.png" alt="">
+    <button class="btn-guide-known next">下一步</button>
+  </div>
+  <div class="rr-second-box">
+    <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/guideRedReward03.png" alt="">
+    <button class="btn-guide-known known">知道了</button>
+  </div>
+</div>
+</div>
+
+<div class="redEnvolope" id="redEnvolope">
+  <div class="env-box">
+    <div class="env-container">
+      <div class="pre-open" id="preOpen">
+        <div class="top">
+          <header>
+            <img class="clearTpaErr" :src="redpacketAuthor.avatar" alt="" />
+            <div class="author">成就一亿技术人!</div>
+          </header>
+          <div class="bot-icon"></div>
+        </div>
+        <footer>
+          <div class="red-openbtn open-start"></div>
+          <div class="tip">
+            领取后你会自动成为博主和红包主的粉丝
+            <a class="rule" target="_blank">规则</a>
+          </div>
+        </footer>
+      </div>
+      <div class="opened" id="opened">
+        <div class="bot-icon">
+          <header>
+            <a class="creatorUrl" href="" target="_blank">
+              <img class="clearTpaErr" src="https://profile.csdnimg.cn/4/E/8/1_hope_wisdom" alt="" />
+            </a>
+            <div class="author">
+              <div class="tt">hope_wisdom</div> 发出的红包
+            </div>
+          </header>
+        </div>
+        <div class="receive-box">
+          <header></header>
+          <div class="receive-list">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="close-btn"></div>
+  </div>
+</div>
+<div id="rewardNew" class="reward-popupbox-new">
+	<p class="rewad-title">打赏作者<span class="reward-close"><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/closeBt.png"></span></p>
+	<dl class="profile-box">
+		<dd>
+		<a href="https://blog.csdn.net/weixin_42304193" data-report-click='{"mod":"popu_379","dest":"https://blog.csdn.net/weixin_42304193","ab":"new"}'>
+			<img src="https://profile-avatar.csdnimg.cn/9f5fdc03d4424ff9ba3d297e4ef0e542_weixin_42304193.jpg!1" class="avatar_pic">
+		</a>
+		</dd>
+		<dt>
+			<p class="blog-name">程序员 小明</p>
+			<p class="blog-discript">你的鼓励将是我创作的最大动力</p>
+		</dt>
+	</dl>
+	<div class="reward-box-new">
+			<div class="reward-content"><div class="reward-right"></div></div>
+	</div>
+	<div class="money-box">
+				<span class="choose-money choosed" data-id="2">¥2</span>
+				<span class="choose-money " data-id="4">¥4</span>
+				<span class="choose-money " data-id="6">¥6</span>
+				<span class="choose-money " data-id="10">¥10</span>
+				<span class="choose-money " data-id="20">¥20</span>
+				<input id="customizeMoney" class="customize-money" name="" type="" value="" placeholder="自定义"/>
+				<div class="customize-tip">输入1-500的整数</div>
+	</div>
+	<div class="pay-box">
+		<div class="pay-type-blance pay-type active" data-type="blance">
+			<img class="unchoose" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newUnChoose.png" alt="">
+			<img class="choose"src="https://csdnimg.cn/release/blogv2/dist/pc/img/newChoose.png" alt="">
+			<span class="pay-type-name">余额支付</span>
+			<span class="pay-type-num">(余额：-- )</span>
+		</div>
+		<div class="pay-type-money pay-type" data-type="money">
+			<img class="unchoose" src="https://csdnimg.cn/release/blogv2/dist/pc/img/newUnChoose.png" alt="">
+			<img class="choose"src="https://csdnimg.cn/release/blogv2/dist/pc/img/newChoose.png" alt="">
+			<span class="pay-type-name">扫码支付</span>
+		</div>
+	</div>
+	<div class="sure-box">
+		<div class="sure-box-money">
+			<div class="code-box">
+				<div class="code-num-box">
+					<span class="code-name">扫码支付：</span><span class="code-num">¥2</span>
+				</div>
+				<div class="code-img-box">
+					<div class="renovate">
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/pay-time-out.png">
+					<span>获取中</span>
+					</div>
+				</div>
+				<div class="code-pay-box">
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/newWeiXin.png" alt="">
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/newZhiFuBao.png" alt="">
+					<span>扫码支付</span>
+				</div>
+			</div>
+		</div>
+		<div class="sure-box-blance">
+			<p class="tip">您的余额不足，请更换扫码支付或<a target="_blank" data-report-click='{"mod":"1597646289_003","spm":"1001.2101.3001.4302"}' href="https://i.csdn.net/#/wallet/balance/recharge?utm_source=RewardVip" class="go-invest">充值</a></p>
+			<p class="is-have-money"><a class="reward-sure">打赏作者</a></p>
+		</div>
+	</div>
+</div>
+      <div class="pay-code">
+      <div class="pay-money">实付<span class="pay-money-span" data-nowprice='' data-oldprice=''>元</span></div>
+      <div class="content-blance"><a class="blance-bt" href="javascript:;">使用余额支付</a></div>
+      <div class="content-code">
+        <div id="payCode" data-id="">
+          <div class="renovate">
+            <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/pay-time-out.png">
+            <span>点击重新获取</span>
+          </div>
+        </div>
+        <div class="pay-style"><span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/weixin.png"></span><span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/zhifubao.png"></span><span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/jingdong.png"></span><span class="text">扫码支付</span></div>
+      </div>
+      <div class="bt-close">
+        <svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12">
+          <defs>
+            <style type="text/css"></style>
+          </defs>
+          <path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path>
+        </svg>
+      </div>
+      <div class="pay-balance">
+        <input type="radio" class="pay-code-radio" data-type="details">
+        <span class="span">钱包余额</span>
+          <span class="balance" style="color:#FC5531;font-size:14px;">0</span>
+          <div class="pay-code-tile">
+            <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/pay-help.png" alt="">
+            <div class="pay-code-content">
+              <div class="span">
+                <p class="title">抵扣说明：</p>
+                <p> 1.余额是钱包充值的虚拟货币，按照1:1的比例进行支付金额的抵扣。<br> 2.余额无法直接购买下载，可以购买VIP、C币套餐、付费专栏及课程。</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <a class="pay-balance-con" href="https://i.csdn.net/#/wallet/balance/recharge" target="_blank"><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/recharge.png" alt=""><span>余额充值</span></a>
+    </div>
+    <div style="display:none;">
+      <img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+    </div>
+      <div class="keyword-dec-box" id="keywordDecBox"></div>
+  </body>
+  <script src="https://csdnimg.cn/release/blogv2/dist/components/js/axios-83fa28cedf.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_highlight-8defd55d6e.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/components/js/pc_wap_common-be82269d23.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/components/js/edit_copy_code-2d3931414f.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.6.12/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+  <script src="https://g.csdnimg.cn/user-accusation/1.0.5/user-accusation.js" type="text/javascript"></script>
+  <script>
+    // 全局声明
+    if (window.csdn === undefined) {
+      window.csdn = {};
+    }
+    window.csdn.sideToolbar = {
+      options: {
+        report: {
+          isShow: true,
+        },
+        qr: {
+          isShow: false,
+        },
+        guide: {
+          isShow: true
+        }
+      }
+    }
+    $(function() {
+      $(document).on('click', "a.option-box[data-type='report']", function() {
+        window.csdn.loginBox.key({
+          biz: 'blog',
+          subBiz: 'other_service',
+          cb: function() {
+            window.csdn.feedback({
+              "type": 'blog',
+              "rtype": 'article',
+              "rid": articleId,
+              "reportedName": username,
+              "submitOptions": {
+                "title": articleTitle,
+                "contentUrl": articleDetailUrl
+              },
+              "callback": function() {
+                showToast({
+                  text: "感谢您的举报，我们会尽快审核！",
+                  bottom: '10%',
+                  zindex: 9000,
+                  speed: 500,
+                  time: 1500
+                })
+              }
+            })
+          }
+        })
+      });
+    })
+  </script>
+    <script src="https://g.csdnimg.cn/baidu-search/1.0.12/baidu-search.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/download/old_static/js/qrcode.js"></script>
+  <script src="https://g.csdnimg.cn/lib/qrcode/1.0.0/qrcode.min.js"></script>
+  <script src="https://g.csdnimg.cn/user-ordercart/3.0.1/user-ordercart.js" type="text/javascript"></script>
+  <script src="https://g.csdnimg.cn/user-ordertip/5.0.1/user-ordertip.js" type="text/javascript"></script>
+  <script src="https://g.csdnimg.cn/order-payment/4.0.1/order-payment.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/pc/js/common-346b634517.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/pc/js/detail-434942c04f.min.js" type="text/javascript"></script>
+  <script src="https://csdnimg.cn/release/blogv2/dist/pc/js/column-3911b0dc26.min.js" type="text/javascript"></script>
+  <script src="https://g.csdnimg.cn/side-toolbar/3.4/side-toolbar.js" type="text/javascript"></script>
+  <script src="https://g.csdnimg.cn/copyright/1.0.4/copyright.js" type="text/javascript"></script>
+  <script>
+    $(".MathJax").remove();
+    if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+      $('div.markdown_views')[0].className = 'markdown_views';
+    }
+  </script>
+  <script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      "HTML-CSS": {
+        linebreaks: { automatic: true, width: "94%container" },
+        imageFont: null
+      },
+      tex2jax: {
+      preview: "none",
+      ignoreClass:"title-article"
+      },
+      mml2jax: {
+      preview: 'none'
+      }
+    });
+  </script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/common/csdn-login-box/csdn-login-box.js"></script></html>
